@@ -266,6 +266,15 @@ class Moxpack:
             var_file = tpl.template_path
             template_dir = Path(var_file).parent
 
+            # Init
+            rprint(f"[blue]packer init {var_file}[/blue]")
+            validate_cmd = ["packer", "init", "-var-file", str(var_file), str(template_dir)]
+            result = subprocess.run(validate_cmd, capture_output=True, text=True)
+            print(result.stdout)
+            if result.returncode != 0:
+                rprint(f"[red]packer init failed[/red]")
+                continue
+
             # Validate
             rprint(f"[blue]Validating template with {var_file}[/blue]")
             validate_cmd = ["packer", "validate", "-var-file", str(var_file), str(template_dir)]
