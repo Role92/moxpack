@@ -87,6 +87,7 @@ source "proxmox-iso" "kali-last-snapshot" {
             timezone = var.timezone
             keymap = var.keymap
             keymap_variant = var.keymap_variant
+            locale = var.locale
         })
     }
 }
