@@ -87,6 +87,7 @@ source "proxmox-iso" "debian13" {
             timezone = var.timezone
             keymap = var.keymap
             keymap_variant = var.keymap_variant
+            locale = var.locale
         })
     }
 }
