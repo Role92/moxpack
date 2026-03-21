@@ -87,6 +87,7 @@ source "proxmox-iso" "ubuntu2204-server" {
             timezone = var.timezone
             keymap = var.keymap
             keymap_variant = var.keymap_variant
+            locale = var.locale
         })
     }  
 }
