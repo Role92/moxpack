@@ -386,4 +386,6 @@ d-i finish-install/reboot_in_progress note
 # packages and run commands in the target system.
 #d-i preseed/late_command string apt-install zsh; in-target chsh -s /bin/zsh
 
-d-i preseed/late_command string echo '${user} ALL = (root) NOPASSWD: ALL' > /target/etc/sudoers.d/${user}
+d-i preseed/late_command string \
+  echo '${user} ALL = (root) NOPASSWD: ALL' > /target/etc/sudoers.d/${user}; \
+  in-target systemctl enable ssh
