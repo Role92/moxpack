@@ -19,6 +19,7 @@ autoinstall:
     - acpid
     - dbus
     - ifupdown
+    - cloud-initramfs-growroot
   storage:
     layout:
       name: direct
