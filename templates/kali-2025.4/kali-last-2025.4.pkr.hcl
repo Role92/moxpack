@@ -3,7 +3,7 @@ locals {
     template_description = "${var.description}, generated with packer at ${formatdate("YYYY-MM-DD hh:mm:ss", timestamp())}, connection: username:password ${var.vm_username}:${var.vm_password}"
 }
 
-source "proxmox-iso" "kali-last-snapshot" {
+source "proxmox-iso" "kali" {
     # PROXMOX infos
     proxmox_url = "${var.proxmox_api_url}"
     username    = "${var.proxmox_api_token_id}"
@@ -66,7 +66,7 @@ source "proxmox-iso" "kali-last-snapshot" {
     # BOOT
     boot_command = [
       "<down><tab>", # non-graphical install
-      "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/kali-last-snapshot.cfg ",
+      "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/kali.cfg ",
       "language=en locale=en_US.UTF-8 ",
       "country=US keymap=${var.keymap} ",
       "hostname=kali domain=local ",
@@ -80,7 +80,7 @@ source "proxmox-iso" "kali-last-snapshot" {
     
     # Use templatefile function to process the user-data template with variables
     http_content = {
-        "/kali-last-snapshot.cfg" = templatefile("http/kali-last-snapshot.cfg.pkrtpl.hcl", {
+        "/kali.cfg" = templatefile("http/kali.cfg.pkrtpl.hcl", {
             user = var.vm_username
             password = var.vm_password
             ssh_public_key = var.ssh_public_key
@@ -93,7 +93,7 @@ source "proxmox-iso" "kali-last-snapshot" {
 }
 
 build {
-    sources = ["proxmox-iso.kali-last-snapshot"]
+    sources = ["proxmox-iso.kali"]
 
     provisioner "shell" {
         inline = [
