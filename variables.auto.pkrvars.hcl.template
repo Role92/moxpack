@@ -32,4 +32,6 @@ timezone = "Europe/Paris"
 # your current layout : localectl status
 keymap = "fr"
 keymap_variant = "latin9"
+# list all available locales: locale -a
+locale = "en_US"
 ssh_public_key = "MY KEY HERE"

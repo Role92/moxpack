@@ -1,7 +1,7 @@
 #cloud-config
 autoinstall:
   version: 1
-  locale: en_US
+  locale: ${locale}
   keyboard:
     layout: ${keymap}
     variant: ${keymap_variant}
