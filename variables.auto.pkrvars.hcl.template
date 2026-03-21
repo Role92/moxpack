@@ -33,5 +33,5 @@ timezone = "Europe/Paris"
 keymap = "fr"
 keymap_variant = "latin9"
 # list all available locales: locale -a
-locale = "en_US"
+locale = "en_US.UTF-8"
 ssh_public_key = "MY KEY HERE"
