@@ -277,7 +277,7 @@ tasksel tasksel/first multiselect SSH server
 # We need at least these to continue the preseeding later on.
 # Provide also haveged so we (hopefully) have more entropy when our VM starts
 # for the first time.
-d-i pkgsel/include string kali-linux-default kali-desktop-xfce haveged openssh-server sudo qemu-guest-agent python3 acpid acpi-support dbus ca-certificates curl wget vim cloud-init cloud-initramfs-growroot
+d-i pkgsel/include string kali-linux-default kali-desktop-xfce haveged openssh-server sudo qemu-guest-agent python3 acpid acpi-support dbus ca-certificates curl wget vim cloud-init
 
 # Whether to upgrade packages after debootstrap.
 # Allowed values: none, safe-upgrade, full-upgrade
