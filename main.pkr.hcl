@@ -55,6 +55,10 @@ variable "keymap_variant" {
     type = string
     default = ""
 }
+variable "locale" {
+  type    = string
+  default = "en_US"
+}
 variable "network_bridge" {
   type = string
 }
