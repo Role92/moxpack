@@ -99,14 +99,13 @@ d-i netcfg/wireless_wep string
 # If you select ftp, the mirror/country string does not need to be set.
 #d-i mirror/protocol string https
 d-i mirror/country string manual
-d-i mirror/http/hostname string deb.debian.org
-d-i mirror/http/directory string /debian
+d-i mirror/http/hostname string ftp.halifax.rwth-aachen.de
+d-i mirror/http/directory string /kali
 d-i mirror/http/proxy string
 
 # Suite to install.
-#d-i mirror/suite string testing
-# Suite to use for loading installer components (optional).
-#d-i mirror/udeb/suite string testing
+d-i mirror/suite string kali-last-snapshot
+d-i mirror/codename string kali-last-snapshot
 
 ### Account setup
 # Skip creation of a root account (normal user account will be able to
