@@ -227,7 +227,7 @@ d-i partman/mount_style select traditional
 # option can result in an incomplete system and should only be used by very
 # experienced users.
 #d-i base-installer/install-recommends boolean false
-d-i base-installer/install-recommends boolean false
+d-i base-installer/install-recommends boolean true
 
 # The kernel image (meta) package to be installed; "none" can be used if no
 # kernel is to be installed.
