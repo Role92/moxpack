@@ -68,7 +68,7 @@ d-i netcfg/choose_interface select auto
 # Any hostname and domain names assigned from dhcp take precedence over
 # values set here. However, setting the values still prevents the questions
 # from being shown, even if values come from dhcp.
-d-i netcfg/get_hostname string debian13
+d-i netcfg/get_hostname string kali
 d-i netcfg/get_domain string local
 
 # If you want to force a hostname, regardless of what either the DHCP
@@ -99,7 +99,7 @@ d-i netcfg/wireless_wep string
 # If you select ftp, the mirror/country string does not need to be set.
 #d-i mirror/protocol string https
 d-i mirror/country string manual
-d-i mirror/http/hostname string ftp.halifax.rwth-aachen.de
+d-i mirror/http/hostname string http.kali.org
 d-i mirror/http/directory string /kali
 d-i mirror/http/proxy string
 
@@ -271,13 +271,13 @@ apt-cdrom-setup	apt-setup/cdrom/set-first	boolean	false
 
 ### Package selection
 #tasksel tasksel/first multiselect standard, web-server, kde-desktop
-tasksel tasksel/first multiselect SSH server
+tasksel tasksel/first multiselect standard,core,desktop-xfce,meta-default
 
 # Individual additional packages to install
 # We need at least these to continue the preseeding later on.
 # Provide also haveged so we (hopefully) have more entropy when our VM starts
 # for the first time.
-d-i pkgsel/include string xserver-xorg kali-defaults-desktop kali-linux-default kali-desktop-xfce haveged openssh-server sudo qemu-guest-agent python3 acpid acpi-support dbus ca-certificates curl wget vim cloud-init cloud-initramfs-growroot
+d-i pkgsel/include string haveged openssh-server qemu-guest-agent python3 curl wget vim cloud-init cloud-initramfs-growroot
 
 # Whether to upgrade packages after debootstrap.
 # Allowed values: none, safe-upgrade, full-upgrade
