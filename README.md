@@ -52,7 +52,7 @@ A Qemu Proxmox Template builder project using Packer 📦
 | 202500 | windows-server-2025-x64-eval-noup-template        |
 | 202501 | windows-server-2025-x64-eval-template             |
 | 202502 | windows-server-2025-x64-template                  |
-| 901337 | kali-2025.4-x64-template                          |
+| 901337 | kali-2026.1-x64-template                          |
 | 813000 | debian-13-x64-template                            |
 | 922040 | ubuntu-22.04-x64-server-template                  |
 | 922041 | ubuntu-22.04-x64-desktop-template                 |
