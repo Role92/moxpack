@@ -56,7 +56,7 @@ source "proxmox-iso" "kali" {
 
     # CONNECTION
     communicator         = "ssh"
-    ssh_wait_timeout     = "20m"
+    ssh_wait_timeout     = "40m"
     task_timeout         = "20m" // On slow disks the imgcopy operation takes > 1m
 
     # CLOUD INIT
